@@ -1,0 +1,54 @@
+/*
+ * Page: Profile & Options
+ * ----------------------
+ */
+.profile-logo,
+.options-logo {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.profile-logo a,
+.options-logo a {
+  color: #444;
+}
+.profile-page,
+.options-page {
+  background: #d2d6de;
+}
+.profile-box,
+.options-box {
+  width: 360px;
+  margin: 1% auto;
+}
+
+@media (max-width: 768px) {
+  .profile-box,
+  .options-box {
+    width: 90%;
+    margin-top: 10px;
+  }
+}
+.profile-box-body,
+.options-box-body {
+  background: #fff;
+  padding: 20px;
+  border-top: 0;
+  color: #666;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/*
+.profile-box-body .form-control-feedback,
+.options-box-body .form-control-feedback {
+  color: #777;
+}
+.profile-box-msg,
+.options-box-msg {
+  margin: 0;
+  text-align: center;
+  padding: 0 20px 20px 20px;
+}
+*/
