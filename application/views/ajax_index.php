@@ -49,6 +49,7 @@
       $('#listCal').fullCalendar({
         defaultView: 'listMonth',
         height : 490,
+        //resourceLabelText: 'Rooms',
         eventSources    : [
           {
             url  : base_url+'admin/getJadwal',
@@ -57,14 +58,13 @@
             textColor    : 'white',
           },
         ],
+        listDayFormat : 'dddd, D MMMM Y',
+        listDayAltFormat : false,
         eventRender: function(event, element){
-          var el = element.html();
-          //element.html("<div style='width:90%;float:left;'>"+el+"</div><div style='text-align:right;'>"+event.ruang+"</div>");
           var els = $(element).find('td.fc-list-item-title');
-          var app = '<td class="fc-widget-content">'+event.ruang+'</td>';
-          var app2 = '<div class="pull-right"><em>'+event.ruang+'</em></div>';
-          //els.after(app);
-          els.append(app2);
+          var app = '<a>'+event.title+'</a>  <strong>di '+event.ruang+'</strong><div class="pull-right"><em style="color:'+event.color+'">'+event.bidang+'</em></div>';
+
+          els.html(app);
         },
 
         eventClick:  function(event, jsEvent, view) {
@@ -83,47 +83,6 @@
           }
       })
   });
-
-  function getRandomColor(){
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i=0; i<6; i++){
-      color += letters[Math.floor(Math.random()*16)];
-    }
-    return color;
-  }
-
-  function setRandomColor(){
-    $('#colorpad').css("background-color", getRandomColor());
-    //alert(getRandomColor());
-  }
-
-  function tampilSwal(){
-    swal("Hello World!");
-  }
-
-  function swalSuccess(){
-    swal("Tersimpan", "Data sukses tersimpan", "success");
-  }
-
-  function swalWarning(){
-      swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
-          });
-        } else {
-          swal("Your imaginary file is safe!");
-        }
-      });
-  }
 </script>
 </body>
 </html>

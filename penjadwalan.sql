@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Mei 2018 pada 04.53
+-- Generation Time: 17 Mei 2018 pada 01.42
 -- Versi Server: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -67,11 +67,12 @@ CREATE TABLE `data_bidang` (
 --
 
 INSERT INTO `data_bidang` (`id_bidang`, `nama`, `color`) VALUES
-(1, 'Sekretariat', '#f56954'),
-(2, 'Perencanaan Pengembangan Pendidikan (PPP)', '#00a65a'),
+(1, 'Sekretariat', '#e74c3c'),
+(2, 'Perencanaan Pengembangan Pegawai (PPP)', '#00a65a'),
+(3, 'Mutasi', '#605ca8'),
 (4, 'Pembinaan Kesejahteraan Pegawai (PKP)', '#D81B60'),
-(5, 'Informasi Data Pegawai (INKA)', '#39CCCC'),
-(6, 'Unit Penilai Kompetensi ASN (UPENKOM)', '#ff851b');
+(5, 'Informasi Data Pegawai (INKA)', '#3c8dbc'),
+(6, 'Unit Penilai Kompetensi ASN (UPENKOM)', '#d35400');
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,11 @@ INSERT INTO `jadwal_rapat` (`id`, `id_bidang`, `id_ruang`, `tgl_pemesanan`, `tgl
 (4, 1, 2, '2018-05-03', '2018-05-05', 'pagi', 'Rapat Koordinasi Kesekretariat', '-', '1'),
 (5, 5, 6, '2018-05-03', '2018-05-04', 'pagi', 'Rapat Rutin', '-', '0'),
 (6, 1, 6, '2018-05-10', '2018-05-10', 'pagi', 'Apa saja', '', '0'),
-(7, 6, 3, '2018-05-12', '2018-05-18', 'siang', 'Yesh', '', '1');
+(7, 6, 3, '2018-05-12', '2018-05-18', 'siang', 'Yesh', '', '1'),
+(8, 3, 7, '2018-05-17', '2018-05-17', 'siang', 'Kumpul Bersama', '', '1'),
+(9, 2, 6, '2018-05-17', '2018-06-01', 'pagi', 'Bedah Buku From Zero to Hero', '', '1'),
+(10, 4, 7, '2018-05-17', '2018-06-07', 'siang', 'Rapat Koordinasi', '', '1'),
+(11, 5, 4, '2018-05-17', '2018-06-07', 'pagi', 'Senam ', '', '1');
 
 -- --------------------------------------------------------
 
@@ -190,7 +195,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `id_bidang`) VALUES
 (1, 'admin', '$2y$10$BjxB/TRFM5QabIhJ5Ax3z.q/MI6UakXfjyorn78Ifpc1wtJPbLjZq', 'admin', 0),
-(2, 'sekretaris', '$2y$10$nYgEWuABdNYkwdJFiIx1GOJsLjcc2QkhwHHyYPyKe3BRxEDdHNKMK', 'petugas', 1);
+(2, 'sekretaris', '$2y$10$nYgEWuABdNYkwdJFiIx1GOJsLjcc2QkhwHHyYPyKe3BRxEDdHNKMK', 'petugas', 1),
+(3, 'kabid_ppp', '$2y$10$2ucK4AkSWYCtIYfl1YS8M.XJP0T.6VXV8QTtW7qbQNW456yKIR.o6', 'petugas', 2),
+(4, 'kabid_mutasi', '$2y$10$DUWxXUaf/r1b5VFraCXPw.VrycCaa5XuESecSF1O.OSa18vGeM3nS', 'petugas', 3),
+(5, 'kabid_pkp', '$2y$10$I/BOWdBHfr7KUXRhZ/7zWOzLqIMWVS9I6Qczkc4cGYxM46wwzvWaW', 'petugas', 4),
+(6, 'kabid_inka', '$2y$10$1rk7QZe8gzKlC9EhmOLBUeQxrGf3Z4kQplu0oEssgxq1a4HCm/o4.', 'petugas', 5),
+(7, 'kabid_upenkom', '$2y$10$mEbRVFjadqXbwzmXyb4tnO8NvriVYBGWg30/AdWmpL4a/wrWpmcGO', 'petugas', 6);
 
 -- --------------------------------------------------------
 
@@ -291,13 +301,13 @@ ALTER TABLE `data_ruangan`
 -- AUTO_INCREMENT for table `jadwal_rapat`
 --
 ALTER TABLE `jadwal_rapat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
