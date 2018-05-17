@@ -1,0 +1,9 @@
+admin 		admins
+sekretariat 	sekretaris
+
+kabid_ppp
+	1234
+kabid_mutasi	1234
+kabid_pkp	1234
+kabid_inka	1234
+kabid_upenkom	1234

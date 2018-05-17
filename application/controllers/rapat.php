@@ -78,10 +78,10 @@ class Rapat extends CI_Controller{
         $output['recordsTotal']=$output['recordsFiltered']=$jum->num_rows();
         }
 
-        $no = 1;
+        $no = $start+1;
         foreach ($query->result_array() as $data) {
             $output['data'][]=array(
-                $no,
+                $no++,
                 $data['id'],
                 $data['tgl_pemesanan'],
                 $data['tgl_rapat'],
@@ -91,7 +91,7 @@ class Rapat extends CI_Controller{
                 $data['nama_acara'],
                 $data['status'],
             );
-            $no++;
+            //$no++;
         }
 
         echo json_encode($output);

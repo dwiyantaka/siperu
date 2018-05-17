@@ -25,6 +25,7 @@ class Admin extends CI_Controller{
     $data['year_count'] = $this->count->year_count($data['year']);
 
     $data['total_count'] = $this->count->total_count();
+    $data['cancel_count'] = $this->count->cancel_count();
 
     $this->load->view('index', $data);
   }

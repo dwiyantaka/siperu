@@ -9,7 +9,7 @@
 			<div class="col-md-3">
 			 	<!-- <div class="box box-danger" id="calendar"></div> -->
 
-					<div class="small-box bg-red">
+					<div class="small-box bg-green">
             <div class="inner">
               <h3><?php echo $month_count; ?></h3>
 
@@ -34,6 +34,17 @@
               <h3><?php echo $total_count; ?></h3>
 
               <p>Total Pemesanan</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+          </div>
+
+					<div class="small-box bg-red">
+            <div class="inner">
+              <h3><?php echo $cancel_count; ?></h3>
+
+              <p>Total Pembatalan</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
