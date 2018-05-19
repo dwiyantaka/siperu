@@ -64,6 +64,7 @@ class Rapat extends CI_Controller{
         $this->db->limit($length,$start);
         /*Urutkan dari alphabet paling terkahir*/
         $this->db->order_by('id','DESC');
+        //$this->db->order_by('status', 'ASC');
         $query=$this->db->get($table);
 
 

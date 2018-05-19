@@ -20,6 +20,7 @@ class Laporan_model extends CI_Model{
     if($postData){
       $this->db->where('tgl_pemesanan >=', $postData['awal']);
       $this->db->where('tgl_pemesanan <=', $postData['akhir']);
+      $this->db->where('status', '1');
     }
 
     $this->db->from($this->table);
@@ -77,6 +78,7 @@ class Laporan_model extends CI_Model{
   public function view($start, $end){
     $this->db->where('tgl_pemesanan >=', $start);
     $this->db->where('tgl_pemesanan <=', $end);
+    $this->db->where('status', '1');
     return $this->db->get('view_jadwal')->result();
   }
 }

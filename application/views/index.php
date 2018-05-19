@@ -13,7 +13,7 @@
             <div class="inner">
               <h3><?php echo $month_count; ?></h3>
 
-              <p>Pemesanan di Bulan <?php echo $month; ?></p>
+              <p>Agenda Rapat di Bulan <?php echo $month; ?></p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -23,7 +23,7 @@
             <div class="inner">
               <h3><?php echo $year_count; ?></h3>
 
-              <p>Pemesanan di Tahun <?php echo $year; ?></p>
+              <p>Agenda Rapat di Tahun <?php echo $year; ?></p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -33,7 +33,7 @@
             <div class="inner">
               <h3><?php echo $total_count; ?></h3>
 
-              <p>Total Pemesanan</p>
+              <p>Total Agenda Rapat</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
